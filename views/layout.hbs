@@ -5,6 +5,19 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+
+    <nav>
+
+      <a href="/">Home page</a>
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/login">Login</a>
+
+      <form action="/auth/logout" method="get">
+        <button type="submit">Logout</button>
+      </form>
+
+    </nav>
+
     {{{body}}}
   </body>
 </html>
