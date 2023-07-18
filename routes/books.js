@@ -7,20 +7,20 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 const isOwner = require('../middleware/isOwner')
 
 
-// all your routes here
-/* GET home page. */
+// ALL THE ROUTES
+//ALL BOOKS (GET)
 router.get('/', (req, res, next) => {
 
     Book.find()
-    .populate('owner')
-    .then((foundBooks) => {       
-        res.render('books/all-books.hbs', { books: foundBooks })
-    })
-    .catch((err) => {
-        console.log(err)
-        next(err)
-    })
- 
+        .populate('owner')
+        .then((foundBooks) => {
+            res.render('books/all-books.hbs', { books: foundBooks })
+        })
+        .catch((err) => {
+            console.log(err)
+            next(err)
+        })
+
 });
 
 
@@ -35,23 +35,23 @@ router.post('/create', isLoggedIn, (req, res, next) => {
     const { imageUrl, link, title, author, genre, parts, concluded, description } = req.body
 
     Book.create({
-        imageUrl, 
-        link, 
-        title, 
-        author, 
-        genre, 
-        parts, 
+        imageUrl,
+        link,
+        title,
+        author,
+        genre,
+        parts,
         concluded,
         description
     })
-    .then((createdBook) => {
-        console.log("Created Book:", createdBook)
-        res.redirect('/books')
-    })
-    .catch((err) => {
-        console.log(err)
-        next(err)
-    })
+        .then((createdBook) => {
+            console.log("Created Book:", createdBook)
+            res.redirect('/books')
+        })
+        .catch((err) => {
+            console.log(err)
+            next(err)
+        })
 
 })
 
@@ -72,3 +72,17 @@ router.get('/details/:bookId', (req, res, next) => {
             next(error)
         })
 })
+
+//EDIT BOOK (GET)
+
+router.get('/edit/:bookId', (req, res, next) => {
+    const { bookId } = req.params;
+   
+    Book.findById(bookId)
+      .then(bookToEdit => {
+        console.log(bookToEdit);
+        res.render("books/edit-book.hbs", bookToEdit)
+      })
+      .catch(error => next(error));
+  });
+
