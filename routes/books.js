@@ -32,7 +32,13 @@ router.get('/create', isLoggedIn, (req, res, next) => {
 //ADDING A NEW BOOK (POST)
 router.post('/create', isLoggedIn, (req, res, next) => {
 
-    const { imageUrl, link, title, author, genre, parts, concluded, description } = req.body
+    let { imageUrl, link, title, author, genre, parts, concluded, description } = req.body
+
+console.log("This is the value of concluded", concluded)
+
+    if(concluded === "on") {
+        concluded = "Yes"
+    }
 
     Book.create({
         imageUrl,
@@ -85,4 +91,36 @@ router.get('/edit/:bookId', (req, res, next) => {
       })
       .catch(error => next(error));
   });
+
+
+//EDIT BOOK (POST)
+
+router.post('/edit/:bookId', (req, res, next) => {
+  
+    const { bookId } = req.params;
+    const { imageUrl, link, title, author, genre, parts, concluded, description }  = req.body;
+  
+    Book.findByIdAndUpdate(
+        bookId, 
+        { 
+            imageUrl,
+            link,
+            title,
+            author,
+            genre,
+            parts,
+            concluded,
+            description
+        }, 
+        { new: true }
+        )
+        .then((updatedBook) => {
+            console.log("Updated Book:", updatedBook)
+            res.redirect(`/books/details/${updatedBook._id}`)
+        }) // go to the details page to see the updates
+        .catch((error) => {
+            console.log(error)
+            next(error)});
+  });
+
 

@@ -8,7 +8,10 @@ const bookSchema = new Schema(
         author: String, 
         genre: String,
         parts: Number, 
-        concluded: String,
+        concluded: {
+            type: String, 
+            default: "No"
+        },
         description: String,
         owner: { type: Schema.Types.ObjectId, ref: "User" },
     },
