@@ -1,0 +1,28 @@
+<h2>Book Details</h2>
+
+<img src="{{imageUrl}}" alt="book">
+<h3>Title: {{title}}</h3>
+<p>Author: {{author}}</p>
+<p>Genre:{{genre}}</p>
+<p>Parts:{{parts}}</p>
+<p>Concluded:{{concluded}}</p>
+<p>Description:{{description}}</p>
+<p>Link to Wattpad: {{link}}</p>
+
+<br>
+<p>Added by: {{owner.fullName}}</p>
+
+<a href="/books/edit/{{_id}}">Edit Book</a>
+<a href="/books/delete/{{_id}}">Delete Book</a>
+
+<br>
+
+<form action="/reviews/add-review/{{owner._id}}/{{_id}}" method="post">
+
+    <label for="comment">Add Review</label>
+    <input type="text" name="comment" id="comment">
+
+    <button type="submit" >Submit</button>
+
+</form>
+

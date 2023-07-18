@@ -1,0 +1,10 @@
+<h2>All Books</h2>
+
+{{#each books}}
+
+    <a href="/books/details/{{_id}}">
+        <p>{{title}} added by: {{owner.fullName}}</p>   
+    </a>
+    <hr>
+
+{{/each}}
