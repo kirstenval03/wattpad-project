@@ -48,7 +48,8 @@ console.log("This is the value of concluded", concluded)
         genre,
         parts,
         concluded,
-        description
+        description,
+        owner: req.session.user._id
     })
         .then((createdBook) => {
             console.log("Created Book:", createdBook)
@@ -81,7 +82,7 @@ router.get('/details/:bookId', (req, res, next) => {
 
 //EDIT BOOK (GET)
 
-router.get('/edit/:bookId', (req, res, next) => {
+router.get('/edit/:bookId', isLoggedIn, isOwner, (req, res, next) => {
     const { bookId } = req.params;
    
     Book.findById(bookId)
@@ -95,10 +96,16 @@ router.get('/edit/:bookId', (req, res, next) => {
 
 //EDIT BOOK (POST)
 
-router.post('/edit/:bookId', (req, res, next) => {
+router.post('/edit/:bookId', isLoggedIn, isOwner, (req, res, next) => {
   
     const { bookId } = req.params;
     const { imageUrl, link, title, author, genre, parts, concluded, description }  = req.body;
+
+    console.log("This is the value of concluded", concluded)
+    
+    if(concluded === "on") {
+        concluded = "Yes"
+    }
   
     Book.findByIdAndUpdate(
         bookId, 
@@ -110,7 +117,8 @@ router.post('/edit/:bookId', (req, res, next) => {
             genre,
             parts,
             concluded,
-            description
+            description,
+            owner: req.session.user._id
         }, 
         { new: true }
         )
@@ -124,3 +132,19 @@ router.post('/edit/:bookId', (req, res, next) => {
   });
 
 
+  //DELETE BOOKS (GET)
+
+router.get("/delete/:bookId",isLoggedIn, isOwner, (req, res, next) => {
+
+    Book.findByIdAndDelete(req.params.bookId)
+        .then((result) => {
+            console.log("Deleted:", result)
+            res.redirect('/books')
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+  
+  })
+
+module.exports = router;

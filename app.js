@@ -15,6 +15,7 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var booksRouter = require('./routes/books');
 
+
 var app = express();
 
 // view engine setup
@@ -56,6 +57,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/books', booksRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
