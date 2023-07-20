@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgba(234, 82, 0, 0.689);
+  background-color: rgba(231, 124, 67, 0.689);
 }
 
 a {
@@ -18,4 +18,228 @@ nav {
 
 img {
   height: 30vh
+}
+
+/* LOGIN & SIGNUP STYLE  */
+
+input {
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 0;
+}
+
+after { clear: both; }
+
+#login {
+  margin: 50px auto;
+  width: 320px;
+}
+
+#login form {
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #b9d9da;
+}
+
+.input{
+  background-color: #f9d4c1;
+  border-radius:10px;
+  color: #a9a9a9;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 90%;
+  outline: 0;
+  height: 50px;
+}
+.submitbtn {
+  background: #749798;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+.submitbtn:hover {
+  background: #076064;
+}
+
+#signup {
+  margin: 50px auto;
+  width: 700px;
+}
+
+#signup form {
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #b9d9da;
+}
+
+/* ADD A BOOK STYLE */
+
+.create-box {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 700px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(16, 85, 93, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(177, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.create-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color:  #e9f6fb;
+  text-align: center;
+}
+
+.create-box .box {
+  position: relative;
+}
+
+.create-box .box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.create-box .box label {
+  position: absolute;
+  top:-30%;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #e9f6fb;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.create-box .box input:focus ~ label,
+.create-box .box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #f68e44;
+  font-size: 12px;
+}
+
+.create-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #b79726;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.box a:hover {
+  background: #f49803;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f4c803,
+              0 0 25px #bd9d0b,
+              0 0 50px #f4e403,
+              0 0 100px #d5cf1e;
+}
+
+.create-box a span {
+  position: absolute;
+  display: block;
+}
+
+.create-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1bf9fd);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.create-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #1bf9fd);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.create-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent,  #1bf9fd);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.create-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent,  #1bf9fd);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+.btn {
+  
 }

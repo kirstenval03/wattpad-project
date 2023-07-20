@@ -1,37 +1,48 @@
-<h2>Add a Book</h2>
-
-<form action="/books/create" method="post">
-
-    <label for="title">Title</label>
-    <input id="title" type="text" name="title">
-
-    <label for="imageUrl">Image</label>
-    <input id="imageUrl" type="text" name="imageUrl">
-
-    <label for="link">Link to the book</label>
-    <input id="link" type="text" name="link">
-
-    <label for="author">Author</label>
-    <input id="author" type="text" name="author">
-
-    <label for="genre">Genre</label>
-    <input id="genre" type="text" name="genre">
-
-    <label for="parts">Parts</label>
-    <input id="parts" type="text" name="parts">
-
-    <label for="description">Descripton</label>
-    <textarea id="description" name="description"></textarea> 
 
 
-    {{!-- TRY WITH A CHECK BOX LABEL --}}
-    <label for="concluded">Concluded</label>
-    <input id="concluded" type="checkbox" name="concluded">
+<div class="create-box">
+    <h2>Add a Book</h2>
+    <form action="/books/create" method="post">
 
+        <div class="box">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title">
+        </div>
+        <div class="box">
+            <label for="imageUrl">Image</label>
+            <input id="imageUrl" type="text" name="imageUrl">
+        </div>
+        <div class="box">
+            <label for="link">Link to the book</label>
+            <input id="link" type="text" name="link">
+        </div>
+        <div class="box">
+            <label for="author">Author</label>
+            <input id="author" type="text" name="author">
+        </div>
+        <div class="box">
+            <label for="genre">Genre</label>
+            <input id="genre" type="text" name="genre">
+        </div>
+        <div class="box">
+            <label for="parts">Parts</label>
+            <input id="parts" type="text" name="parts">
+        </div>
+        <div class="box">
+            <label for="description">Descripton</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+        <div class="box">
+            <label for="concluded">Concluded</label>
+            <input id="concluded" type="checkbox" name="concluded">
+        </div>
 
-
-
-
-    <button type="submit">Add Book</button>
-
-</form>
+        <a href=""> 
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button class="btn" type="submit">Add Book</button>
+        </a>
+    </form>
+</div>

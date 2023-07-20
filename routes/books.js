@@ -23,6 +23,21 @@ router.get('/', (req, res, next) => {
 
 });
 
+  //USER ADDED BOOKS 
+  router.get('/owner', isLoggedIn, (req, res, next) => {
+    const ownerId = req.query.owner_id; // Se espera recibir el _id del usuario en el parámetro de consulta (por ejemplo, /?usuarioId=12345)
+  
+    Book.find({ owner: ownerId }) // Filtramos los libros que tengan el _id del usuario específico
+      .populate('owner')
+      .then((foundBooks) => {
+        res.render('books/your-books.hbs', { books: foundBooks });
+      })
+      .catch((err) => {
+        console.log(err);
+        next(err);
+      });
+  });
+  
 
 //ADDING A NEW BOOK (GET)
 router.get('/create', isLoggedIn, (req, res, next) => {
@@ -70,14 +85,20 @@ module.exports = router;
 router.get('/details/:bookId', (req, res, next) => {
 
     Book.findById(req.params.bookId)
-        .then((book) => {
-            console.log("Found book:", book)
-            res.render('books/book-details.hbs', book)
-        })
-        .catch((error) => {
-            console.log(error)
-            next(error)
-        })
+    .populate('owner')
+    .populate({
+        path: 'reviews', 
+        populate: {path: 'user'}
+    })
+    .then((foundBook) => {
+        console.log("Found Book", foundBook)
+        res.render('books/book-details.hbs', foundBook)
+    })
+    .catch((err) => {
+        console.log(err)
+        next(err)
+    })
+
 })
 
 //EDIT BOOK (GET)
@@ -146,5 +167,7 @@ router.get("/delete/:bookId",isLoggedIn, isOwner, (req, res, next) => {
         })
   
   })
+
+
 
 module.exports = router;

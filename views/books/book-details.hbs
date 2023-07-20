@@ -26,3 +26,18 @@
 
 </form>
 
+{{#if reviews.0.comment}}
+
+    {{#each reviews}}
+
+        <p>{{comment}}</p>
+        <h5>- {{user.fullName}}</h5>
+        <hr>
+
+    {{/each}}
+
+    {{else}}
+
+        <p>No reviews yet</p>
+
+{{/if}}

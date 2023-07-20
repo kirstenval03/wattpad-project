@@ -14,6 +14,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var booksRouter = require('./routes/books');
+var reviewsRouter = require('./routes/reviews')
 
 
 var app = express();
@@ -57,6 +58,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/books', booksRouter);
+app.use('/reviews', reviewsRouter)
 
 
 

@@ -1,21 +1,21 @@
-<div>
-    <h2>Signup</h2>
-    <form action="/auth/signup" method="POST">
+<div id="signup">
 
+    <form action="/auth/signup" method="POST">
+        <h2>Signup</h2>
         <label for="fullName">Full Name</label>
-        <input id="fullName" type="text" name="fullName" />
+        <input id="fullName" class="input" type="text" name="fullName" />
 
         <label for="userName">User</label>
-        <input id="userName" type="text" name="userName" />
+        <input id="userName" class="input" type="text" name="userName" />
 
         <label for="email">Email</label>
-        <input id="email" type="text" name="email" />
+        <input id="email" class="input"  type="text" name="email" />
 
         <label for="password">Password</label>
-        <input id="password" type="password" name="password" />
+        <input id="password" class="input" type="password" name="password" />
 
 
-        <button type="submit">Signup</button>
+        <button type="submit" class="submitbtn">Signup</button>
 
         {{#if errorMessage}}
         <p>{{errorMessage}}</p>
