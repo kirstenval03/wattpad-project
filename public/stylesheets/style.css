@@ -5,6 +5,9 @@ body {
   background-color: rgba(231, 124, 67, 0.689);
 }
 
+p{
+  font-size: large;
+}
 a {
   color: #1f6d8c;
   font-size: large;
