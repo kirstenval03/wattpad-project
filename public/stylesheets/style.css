@@ -248,7 +248,7 @@ after { clear: both; }
 /* NAV-BAR STYLE */
 nav {
   background-color: #cc581581;
-  height: 45px;
+  height: 55px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -260,8 +260,8 @@ nav {
   color: #b9d9da;
   background-color: #cc5815;
   border-radius: 15%;
-  height: 30px;
-  width: 150px;
+  height: 40px;
+  width: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,7 +270,7 @@ nav {
 
 .navbt {
   color: #076064;
-  font-size: large;
+  font-size: larger;
   background-color: #b9d9da;
   border: none;
   border-radius: 15%;
