@@ -15,7 +15,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.set('trust proxy', 1);
+app.set('trust proxy', 5);
 app.enable('trust proxy');
  
 // use session
@@ -28,7 +28,7 @@ app.use(
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       secure: process.env.NODE_ENV === 'production',
       httpOnly: true,
-      maxAge: 60000 // 60 * 1000 ms === 1 min
+      maxAge: 300000 // 60 * 1000 ms === 1 min
     }, // ADDED code below !!!
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI 
