@@ -1,39 +1,48 @@
 {{!-- views/books/book-edit.hbs --}}
+<div class="create-box">
+    <h2>Edit the Book: {{title}}</h2>
 
-<h2>Edit the Book: {{title}}</h2>
+    <form action="/books/edit/{{_id}}" method="post">
+        <div class="box">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title" value="{{title}}">
+        </div>
+        <div class="box">
+            <label for="imageUrl">Image</label>
+            <input id="imageUrl" type="text" name="imageUrl" value="{{imageUrl}}">
+        </div>
+        <div class="box">
+            <label for="link">Link to the book</label>
+            <input id="link" type="text" name="link" value="{{link}}">
+        </div>
+        <div class="box">
+            <label for="author">Author</label>
+            <input id="author" type="text" name="author" value="{{author}}">
+        </div>
+        <div class="box">
+            <label for="genre">Genre</label>
+            <input id="genre" type="text" name="genre" value="{{genre}}">
+        </div>
+        <div class="box">
+            <label for="parts">Parts</label>
+            <input id="parts" type="text" name="parts" value="{{parts}}">
+        </div>
+        <div class="box">
+            <label for="description">Descripton</label>
+            <br>
+            <textarea id="description" name="description" value="{{description}}" ></textarea>
+        </div>
+        <div class="box">
+            <label for="concluded">Concluded</label>
+            <input id="concluded" type="checkbox" name="concluded">
+        </div>
 
-<form action="/books/edit/{{_id}}" method="post">
-
-    <label> Title:
-        <input type="text" name="title" value="{{title}}" />
-    </label>
-
-    <label> Image URL:
-        <input type="text" name="imageUrl" value="{{imageUrl}}" />
-    </label>
-
-    <label> Link to the book:
-        <input type="text" name="link" value="{{link}}" />
-    </label>
-
-    <label> Author:
-        <input type="text" name="author" value="{{author}}" />
-    </label>
-
-    <label> Genre:
-        <input type="text" name="genre" value="{{genre}}" />
-    </label>
-
-    <label> Parts:
-        <input type="text" name="parts" value="{{parts}}" />
-    </label>
-
-    <label> Description:
-        <textarea name="description" cols="30" rows="4">{{description}}</textarea>
-    </label>
-
-
-
-
-    <button>Save changes</button>
-</form>
+        <a href=""> 
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button class="btn" type="submit">Edit Book</button>
+        </a>
+    </form>
+</div>
