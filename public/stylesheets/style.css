@@ -85,6 +85,14 @@ after { clear: both; }
 }
 
 /* ADD A BOOK STYLE */
+.btn{
+  color:white;
+  border: none;
+  background-color:  rgba(16, 85, 93, 0.5);
+  border-radius: 10%;
+  height: 40px;
+  width: 150px;
+}
 
 .create-box {
   position: absolute;
@@ -285,5 +293,15 @@ nav {
 
 /* REVIEWS */
 .reviews{
+  font-size: larger;
+}
+
+
+/* BOOK DETEAILS */
+
+.bookdetails{
+  background-color: rgb(250, 243, 234);
+  border-radius: 2%;
+  padding-left: 30px;
   font-size: larger;
 }
