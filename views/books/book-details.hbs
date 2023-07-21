@@ -17,10 +17,11 @@
 
 <br>
 
-<form action="/reviews/add-review/{{owner._id}}/{{_id}}" method="post">
+<form action="/reviews/add-review/{{owner._id}}/{{_id}}" method="post" class="reviews">
 
-    <label for="comment">Add Review</label>
-    <input type="text" name="comment" id="comment">
+    <label for="comment" class="reviews">Add Review</label>
+    <input type="textarea" name="comment" id="comment" class="reviews">
+ 
 
     <button type="submit" >Submit</button>
 

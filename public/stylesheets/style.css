@@ -6,7 +6,7 @@ body {
 }
 
 p{
-  font-size: large;
+  font-size: larger;
 }
 a {
   color: #1f6d8c;
@@ -283,3 +283,7 @@ nav {
 
 
 
+/* REVIEWS */
+.reviews{
+  font-size: larger;
+}
