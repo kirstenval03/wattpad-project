@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    {{!-- <link rel='stylesheet' href='/stylesheets/style.css' /> --}}
-<link rel="stylesheet" href="/stylesheets/style.css"/>
-  </head>
-  <body>
 
-    <nav>
+<head>
+  <title>{{title}}</title>
+  {{!--
+  <link rel='stylesheet' href='/stylesheets/style.css' /> --}}
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-      <a href="/">Home page</a>
-      <a href="/auth/signup">Signup</a>
-      <a href="/auth/login">Login</a>
-      <a href="/books">All books</a>
-      <a href="/books/owner">Your books</a>
-      <a href="/books/create">Add a Book</a>
+<body>
+  <nav class="navbar">
+
+    <a href="/" class="navlink">Home page</a>
+    <a href="/auth/signup" class="navlink">Signup</a>
+    <a href="/auth/login" class="navlink">Login</a>
+    <a href="/books" class="navlink">All books</a>
+    <a href="/books/owner" class="navlink">Your books</a>
+    <a href="/books/create" class="navlink">Add a Book</a>
 
 
-      <form action="/auth/logout" method="get">
-        <button type="submit">Logout</button>
-      </form>
+    <form action="/auth/logout" method="get">
+      <button type="submit" class="navbt">Logout</button>
+    </form>
 
-    </nav>
+  </nav>
 
-    {{{body}}}
-  </body>
+
+  {{{body}}}
+</body>
+
 </html>

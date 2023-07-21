@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0%;
+  font: 14px;
+  font-family:monospace ;
   background-color: rgba(231, 124, 67, 0.689);
 }
 
@@ -10,10 +11,10 @@ a {
   text-decoration: none;
   font-weight: bolder;
 }
-nav {
-  width: 70vw;
-  display: flex;
-  justify-content: space-between;
+
+button {
+  font-family: monospace;
+  font-size: large;
 }
 
 img {
@@ -243,3 +244,36 @@ after { clear: both; }
 /* .btn {
   
 } */
+
+/* NAV-BAR STYLE */
+nav {
+  background-color: #cc581581;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15%;
+}
+
+.navlink {
+  color: #b9d9da;
+  background-color: #cc5815;
+  border-radius: 15%;
+  height: 30px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.navbt {
+  color: #076064;
+  font-size: large;
+  background-color: #b9d9da;
+  border: none;
+  border-radius: 15%;
+  height: 30px;
+  width: 90px;
+}

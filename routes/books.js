@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
 
 });
 
-  //USER ADDED BOOKS 
+  //SEE THE USER ADDED BOOKS 
   router.get('/owner', isLoggedIn, (req, res, next) => {
     const ownerId = req.query.owner_id; // Se espera recibir el _id del usuario en el parámetro de consulta (por ejemplo, /?usuarioId=12345)
   
