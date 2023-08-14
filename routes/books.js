@@ -25,10 +25,8 @@ router.get('/', (req, res, next) => {
 
   //SEE THE USER ADDED BOOKS 
   router.get('/owner', isLoggedIn, (req, res, next) => {
-    const ownerId = req.query.owner_id; // Se espera recibir el _id del usuario en el parámetro de consulta (por ejemplo, /?usuarioId=12345)
-  
-    Book.find({ owner: ownerId }) // Filtramos los libros que tengan el _id del usuario específico
-      .populate('owner')
+    const ownerId = req.query.owner_id; // 
+    Book.find({ owner: ownerId }) // 
       .then((foundBooks) => {
         res.render('books/your-books.hbs', { books: foundBooks });
       })
